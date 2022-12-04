@@ -1,0 +1,1 @@
+export type getPaginatedDataProps = {endpoint: string, page: number}

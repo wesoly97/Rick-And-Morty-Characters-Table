@@ -11,7 +11,7 @@ export const SelectMui = <T,>({ data, value, onChange, sx }:SelectMuiProps<T>) =
       sx={sx}
     >
       {data.map((item, index) => (
-        <MenuItem key={index} value={item as string}>
+        <MenuItem key={index} value={item as string} sx={sx}>
           {item as string}
         </MenuItem>
       ))}

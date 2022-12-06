@@ -43,7 +43,7 @@ export const CharactersForm = () => {
           InputProps={{ endAdornment: <SearchIcon sx={SEARCH_ICON_COLOR}/>, className: styles.input }}
         />
       </div>
-      <div>
+      <div className={styles.selectContainer}>
         <SelectMui
           data={SPECIES}
           onChange={onSpeciesChange}

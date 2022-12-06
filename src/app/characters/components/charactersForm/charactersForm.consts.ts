@@ -11,7 +11,7 @@ export const SELECT_STYLES = {
   backgroundColor: '#FFFFFF',
   fontFamily: 'Oswald',
   fontSize: 14,
-  color: '#484F53'
+  color: '#484F53',
 }
 
 export const SEARCH_ICON_COLOR = { color: '#0088DA' }

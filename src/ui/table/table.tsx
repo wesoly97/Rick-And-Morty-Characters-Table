@@ -1,5 +1,5 @@
-import React from 'react'
-import { defaultColumn, useTable } from 'react-table'
+import React, { useMemo } from 'react'
+import { useTable } from 'react-table'
 import { TableProps } from '@/ui/table/table.types'
 import styles from './table.module.scss'
 import { v4 as uuid } from 'uuid'
@@ -13,9 +13,8 @@ export const Table = <T extends object>({ columns, data, getSpecialRowBackground
     rows,
     prepareRow,
   } = useTable({
-    columns,
-    data,
-    defaultColumn: { ...defaultColumn, ...{ width: 'auto' } }
+    data: useMemo(() => data, [data]),
+    columns: useMemo(() => columns, [columns])
   })
 
   return (

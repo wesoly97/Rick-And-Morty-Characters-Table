@@ -26,7 +26,7 @@ export const StatusCell = ({ status }:StatusProps) => {
       <div className={styles.icon}>
         {Icon()}
       </div>
-      <div>
+      <div className={styles.status}>
         {status}
       </div>
     </div>

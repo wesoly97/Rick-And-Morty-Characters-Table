@@ -1,0 +1,1 @@
+export type NameCellProps = { name: string, species: string | undefined }

@@ -1,0 +1,19 @@
+.searchInputContainer {
+  display: flex;
+  width: 85%;
+  margin-bottom: 24px;
+}
+
+.inputContainer {
+  margin-right: 48px;
+  input[type="text"] {
+    font-family: "Oswald", sans-serif;
+    font-size: 14px;
+  }
+}
+
+.input {
+  height: 40px;
+  width: 140px;
+  background-color: #FFFFFF;
+}

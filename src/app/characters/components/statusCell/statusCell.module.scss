@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+}
+
+.icon {
+  padding-right: 8px;
+  display: flex;
+  align-self: center;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}

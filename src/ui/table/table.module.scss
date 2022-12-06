@@ -1,0 +1,61 @@
+.container {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 85%;
+  min-height: 525px;
+}
+
+.table {
+  background: white;
+  filter: drop-shadow(0px 2px 18px #DDE3EC);
+  border-radius: 5px;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 43px;
+
+  th {
+    text-align: left;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18.2px;
+    color: #484F53;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  tr {
+    border-bottom: 1px solid #CBD4E2;
+  }
+
+  td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 130%;
+    color: #1A2328;
+
+    > * {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: inherit;
+    }
+  }
+
+  th input, td input {
+    width: 18px;
+    height: 18px;
+  }
+
+  .grayBackground {
+    background-color: #F6F8FA;
+  }
+}
+
+.checkboxContainer {
+  width: 18px;
+  padding-left: 24px;
+  padding-right: 12px;
+}

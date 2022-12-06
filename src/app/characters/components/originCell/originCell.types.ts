@@ -1,0 +1,1 @@
+export type OriginCellProps = { origin: string }

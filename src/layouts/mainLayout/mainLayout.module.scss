@@ -1,13 +1,18 @@
 @font-face {
   font-family: 'Oswald';
-  src: local('Oswald'), url(../../assets/fonts/Oswald/Oswald-Regular.ttf) format('truetype');
+  src: local('Oswald'), url(../../assets/fonts/Oswald/Oswald-Medium.ttf) format('truetype');
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   background-color: #F5F8FD;
-  font-family: 'Oswald', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-  display: flex;
+  font-family: 'Oswald', sans-serif;
 }

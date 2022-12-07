@@ -1,5 +1,7 @@
+@import 'src/theme/colors';
+
 .paginationContainer {
   display: flex;
   justify-content: end;
-  color: #484F53;
+  color: $primaryAnthracite-80;
 }

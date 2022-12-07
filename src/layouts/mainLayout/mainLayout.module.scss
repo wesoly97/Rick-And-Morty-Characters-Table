@@ -1,3 +1,5 @@
+@import 'src/theme/colors';
+
 @font-face {
   font-family: 'Oswald';
   src: local('Oswald'), url(../../assets/fonts/Oswald/Oswald.ttf) format('truetype');
@@ -8,7 +10,7 @@
 }
 
 body {
-  background-color: #F5F8FD;
+  background-color: $primaryBlueLight-100;
   margin: 0;
   padding: 0;
 }

@@ -6,6 +6,7 @@ import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline'
 import CheckCircleOutlineSharpIcon from '@mui/icons-material/CheckCircleOutlineSharp'
 import HelpIcon from '@mui/icons-material/Help'
 import { STATUS_COLORS } from '@/app/characters/components/statusCell/statusCell.consts'
+import classNames from 'classnames'
 
 export const StatusCell = ({ status }:StatusProps) => {
   const Icon = () => {
@@ -21,12 +22,14 @@ export const StatusCell = ({ status }:StatusProps) => {
     }
   }
 
+  const statusClass = classNames(styles.status, { [styles.unknownStatus]: status === STATUS.unknown })
+
   return (
     <div className={styles.container}>
       <div className={styles.icon}>
         {Icon()}
       </div>
-      <div className={styles.status}>
+      <div className={statusClass}>
         {status}
       </div>
     </div>

@@ -1,3 +1,5 @@
+@import 'src/theme/colors';
+
 .container {
   display: block;
   overflow-x: auto;
@@ -7,27 +9,36 @@
 }
 
 .table {
-  background: white;
+  background-color: $primaryWhite;
   border-radius: 5px;
   border-collapse: collapse;
   width: 100%;
   margin-bottom: 43px;
-  box-shadow: 0 4px 2px -2px #dde3ec;
+  box-shadow: $characterTableShadow;
 
   th {
     text-align: left;
     font-weight: 600;
     font-size: 14px;
     line-height: 18.2px;
-    color: #484F53;
+    color: $primaryAnthracite-80;
     padding-top: 12px;
     padding-bottom: 12px;
   }
 
   tr {
-    border-bottom: 1px solid #CBD4E2;
+    border: 1px solid $secondaryBluePale-15;
+
+    & > th {
+      border-bottom: 1px solid $secondaryBluePale-30;
+    }
+
+    & > td {
+      border-bottom: 1px solid $secondaryBluePale-15;
+    }
+
     &:hover {
-      background-color: #EEF1F5;
+      background-color: $secondaryBluePale-10;
       cursor: pointer;
     }
   }
@@ -38,7 +49,7 @@
     font-weight: 400;
     font-size: 15px;
     line-height: 130%;
-    color: #1A2328;
+    color: $primaryAnthracite-100;
 
     > * {
       overflow: hidden;
@@ -54,7 +65,11 @@
   }
 
   .grayBackground {
-    background-color: #F6F8FA;
+    background-color: $secondaryBluePale-5;
+
+    td {
+      color: $primaryAnthracite-70;
+    }
   }
 }
 

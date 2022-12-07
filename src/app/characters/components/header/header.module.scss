@@ -1,7 +1,10 @@
+@import 'src/theme/colors';
+
 .header {
   font-weight: 700;
   font-size: 24px;
   line-height: 30px;
   width: 85%;
   margin-bottom: 24px;
+  color: $primaryAnthracite-100;
 }

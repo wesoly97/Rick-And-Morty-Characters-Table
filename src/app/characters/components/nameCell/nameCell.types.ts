@@ -1,1 +1,1 @@
-export type NameCellProps = { name: string, species: string | undefined }
+export type NameCellProps = { name: string, species: string | undefined, status: string | undefined }

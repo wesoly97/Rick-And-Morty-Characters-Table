@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useContext, useState } from 'react'
+import React, { ChangeEvent, useContext, useEffect, useState } from 'react'
 import { Input } from '@/ui/form/input/input'
 import styles from './charactersForm.module.scss'
 import { SelectMui } from '@/ui/form/select/select'
@@ -11,11 +11,13 @@ import {
 import SearchIcon from '@mui/icons-material/Search'
 import { CharactersFilterContext } from '@/context/charactersFilters/charactersFiltersContext'
 import { setNameContext, setSpeciesContext } from '@/context/charactersFilters/charactersFiltersActions'
+import { useDebounce } from '@/hooks/useDebounce/useDebounce'
 
 export const CharactersForm = () => {
   const { name: contextName, dispatch } = useContext(CharactersFilterContext)
   const [species, setSpecies] = useState(SPECIES[0])
   const [name, setName] = useState(contextName)
+  const debouncedName = useDebounce(name)
 
   const onSpeciesChange = (event: SelectChangeEvent) => {
     if (event.target.value === SPECIES[0]) {
@@ -26,10 +28,14 @@ export const CharactersForm = () => {
     setSpecies(event.target.value)
   }
 
-  const onNameChange = (event: ChangeEvent<HTMLInputElement>) => {
-    dispatch(setNameContext(event.target.value))
-    setName(event.target.value)
-  }
+  useEffect(() => {
+    if (debouncedName !== undefined) {
+      dispatch(setNameContext(debouncedName))
+    }
+  }, [debouncedName])
+
+  const onNameChange = (event: ChangeEvent<HTMLInputElement>) => setName(event.target.value)
+
 
   return (
     <div className={styles.searchInputContainer}>

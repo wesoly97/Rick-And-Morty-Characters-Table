@@ -1,1 +1,1 @@
-export type PaginationItemProps = {isSelected: boolean, value: string}
+export type PaginationItemProps = { isSelected: boolean, value: string }

@@ -14,7 +14,10 @@ const COLUMNS = [
   {
     Header: 'Name',
     accessor: 'name',
-    Cell: (data:CharactersRow) => <NameCell name={data.cell.value} species={data.row.original.species}/>,
+    Cell: (data:CharactersRow) => <NameCell
+      name={data.cell.value}
+      species={data.row.original.species}
+      status={data.row.original.status}/>,
     width: 231,
     maxWidth: 231,
   },

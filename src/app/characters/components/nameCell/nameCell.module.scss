@@ -1,7 +1,13 @@
+@import 'src/theme/colors';
+
 .name {
   font-weight: 600;
 }
 
 .species {
-  color: #484F53;
+  color: $primaryAnthracite-80;
+}
+
+.speciesGray {
+  color: $primaryAnthracite-50;
 }

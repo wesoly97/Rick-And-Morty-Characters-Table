@@ -1,3 +1,5 @@
+@import 'src/theme/colors';
+
 .container {
   display: flex;
 }
@@ -16,4 +18,9 @@
 .status {
   font-weight: 600;
   font-size: 14px;
+  color: $primaryAnthracite-100;
+}
+
+.unknownStatus {
+  color: $primaryAnthracite-70;
 }

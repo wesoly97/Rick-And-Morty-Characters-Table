@@ -9,6 +9,7 @@ export type CharactersRow = {
     row: {
         original: {
             species?: string
+            status?: string,
         }
     }
 }

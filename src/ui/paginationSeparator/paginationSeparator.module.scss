@@ -1,3 +1,5 @@
+@import 'src/theme/colors';
+
 .separator {
   width: 36px;
   display: flex;
@@ -7,5 +9,5 @@
   user-select: none;
   font-size: 14px;
   font-weight: 600;
-  color: #484F53;
+  color: $primaryAnthracite-80;
 }

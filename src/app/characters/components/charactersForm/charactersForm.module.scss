@@ -1,3 +1,5 @@
+@import 'src/theme/colors';
+
 .searchInputContainer {
   display: flex;
   width: 85%;
@@ -11,12 +13,17 @@
     font-family: "Oswald", sans-serif;
     font-size: 14px;
   }
+  input::placeholder {
+    color: $primaryAnthracite-50;
+    font-weight: 400;
+    font-size: 14px;
+  }
 }
 
 .input {
   height: 40px;
   width: 140px;
-  background-color: #FFFFFF;
+  background-color: $primaryWhite;
 }
 
 .selectContainer {

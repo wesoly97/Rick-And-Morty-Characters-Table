@@ -1,1 +1,1 @@
-export type AvatarProps = { src?:string }
+export type AvatarProps = { src?: string }

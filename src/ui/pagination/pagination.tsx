@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { PaginationProps } from '@/ui/pagination/pagination.types'
 import { PaginationItem } from '@/ui/paginationItem/paginationItem'
 import styles from './pagination.module.scss'
@@ -7,34 +7,28 @@ import { PaginationSeparator } from '@/ui/paginationSeparator/paginationSeparato
 const PAGES_BRAKE_POINT = 6
 
 export const Pagination = ({ currentPage = 1, pages }:PaginationProps) => {
-  const pagesNew = pages > PAGES_BRAKE_POINT ? 3 : pages
+  const pagesBrakePoint = pages > PAGES_BRAKE_POINT
+  const restOfThePages = pagesBrakePoint ? 3 : pages
 
-  const RenderSeparator = () => {
-    if (pages > PAGES_BRAKE_POINT) {
-      return (<PaginationSeparator />)
-    }
-  }
-
-  const getLefItems = () => {
-    return Array.from({ length: pagesNew }, (_, number) => number+1)
-  }
+  const restOfThePagesArray = useMemo(
+    () => Array.from({ length: restOfThePages }, (_, number) => number + 1),
+    [restOfThePages])
 
   return (
     <div className={styles.paginationContainer}>
-      {pages > PAGES_BRAKE_POINT &&( <PaginationItem isSelected={false} value={'<'} />)}
-      {getLefItems().map(value => (
-        <PaginationItem isSelected={value === currentPage} value={value.toString()} key={value}/>
+      {pagesBrakePoint && <PaginationItem isSelected={false} value={'<'} />}
+      {restOfThePagesArray.map(page => (
+        <PaginationItem isSelected={page === currentPage} value={page.toString()} key={page}/>
       ))}
-      {RenderSeparator()}
-      {pages > PAGES_BRAKE_POINT && (
+      {pagesBrakePoint && <PaginationSeparator />}
+      {pagesBrakePoint && (
         <>
           <PaginationItem isSelected={currentPage === (pages - 2)} value={(pages - 2).toString()} />
           <PaginationItem isSelected={currentPage === (pages - 1)} value={(pages - 1).toString()} />
           <PaginationItem isSelected={currentPage === pages} value={pages.toString()} />
         </>
       )}
-      {pages > PAGES_BRAKE_POINT &&( <PaginationItem isSelected={false} value={'>'} />)}
-
+      {pagesBrakePoint && <PaginationItem isSelected={false} value={'>'} />}
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import { Column, Row } from 'react-table'
 
-export type TableProps<T extends object> = {
+export type TableProps <T extends object> = {
     columns: Column[],
     data: T[],
     getSpecialRowBackground?: (originalRow:Row) => boolean

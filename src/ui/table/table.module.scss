@@ -26,6 +26,10 @@
 
   tr {
     border-bottom: 1px solid #CBD4E2;
+    &:hover {
+      background-color: #EEF1F5;
+      cursor: pointer;
+    }
   }
 
   td {
@@ -58,4 +62,8 @@
   width: 18px;
   padding-left: 24px;
   padding-right: 12px;
+
+  input {
+    cursor: pointer;
+  }
 }

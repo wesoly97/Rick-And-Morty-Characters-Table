@@ -11,6 +11,7 @@ import { CharactersFilterContext } from '@/context/charactersFilters/charactersF
 export const Characters = () => {
   const { name, species } = useContext(CharactersFilterContext)
   const { data } = useGetInfiniteCharactersQuery({ name: name, species: species })
+  const paginatedData = data as CharactersData
 
   return (
     <MainLayout>
@@ -18,9 +19,10 @@ export const Characters = () => {
         <Header text={'Characters'} />
         <CharactersForm />
         <CharactersTable
-          info={(data as CharactersData)?.info}
-          data={(data as CharactersData)?.results}
-          errorText={(data as CharactersData)?.errorText} />
+          info={paginatedData?.info}
+          data={paginatedData?.results}
+          errorText={paginatedData?.errorText}
+        />
       </div>
     </MainLayout>
   )

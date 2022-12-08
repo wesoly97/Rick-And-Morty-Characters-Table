@@ -2,6 +2,8 @@
 export type Info = {
     count: number,
     pages: number,
+    currentPage: number;
+    prev: boolean
 }
 
 export type Results = {

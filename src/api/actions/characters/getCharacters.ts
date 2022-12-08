@@ -6,7 +6,9 @@ import { getCharactersError } from '@/api/actions/characters/characters.utils'
 export const getCharacters = async ({ page, name, species }:GetCharactersProps) => {
   try {
     const params = { page, name, species }
-    return await getPaginatedData({ endpoint: CHARACTERS_KEY, params })
+    const data = await getPaginatedData({ endpoint: CHARACTERS_KEY, params })
+
+    return { ...data, info: { ...{ currentPage: page }, ...data.info } }
   } catch (error) {
     return { errorText: getCharactersError(<CharactersErrorResponse>error), info: { count: 0, pages: 0 }, results: [] }
   }

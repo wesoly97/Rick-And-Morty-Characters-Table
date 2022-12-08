@@ -5,4 +5,5 @@ export type TableProps <T extends object> = {
     data: T[],
     getSpecialRowBackground?: (originalRow:Row) => boolean
     pages: number
+    currentPage: number,
 }

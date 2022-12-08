@@ -5,7 +5,13 @@ import styles from './table.module.scss'
 import { v4 as uuid } from 'uuid'
 import { Pagination } from '@/ui/pagination/pagination'
 
-export const Table = <T extends object>({ columns, data, getSpecialRowBackground, pages }:TableProps<T>) => {
+export const Table = <T extends object>({
+  columns,
+  data,
+  getSpecialRowBackground,
+  pages,
+  currentPage
+}:TableProps<T>) => {
   const {
     getTableProps,
     getTableBodyProps,
@@ -72,7 +78,7 @@ export const Table = <T extends object>({ columns, data, getSpecialRowBackground
           })}
         </tbody>
       </table>
-      <Pagination currentPage={1} pages={pages}/>
+      <Pagination currentPage={currentPage} pages={pages} />
     </div>
   )
 }

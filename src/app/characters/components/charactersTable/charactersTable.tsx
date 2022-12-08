@@ -51,14 +51,16 @@ const getSpecialRowBackground = (row: Row) => (row.original as Results).status =
 
 export const CharactersTable = ({ info, data, errorText }:CharactersTableProps) => {
   if (errorText || !data) {
-    return (<ErrorHeader text={errorText}/>)
+    return <ErrorHeader text={errorText}/>
   }
+
   return (
     <Table
       data={data}
       columns={COLUMNS}
       getSpecialRowBackground={getSpecialRowBackground}
       pages={info.pages}
+      currentPage={info.currentPage}
     />
   )
 }
